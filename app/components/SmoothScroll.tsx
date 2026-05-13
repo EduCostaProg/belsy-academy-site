@@ -16,7 +16,18 @@ export default function SmoothScroll() {
       if (!anchor) return;
 
       const href = anchor.getAttribute("href");
-      if (!href || href === "#") return;
+      if (!href) return;
+
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (href === "#") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+        history.replaceState(null, "", location.pathname + location.search);
+        return;
+      }
 
       const target = document.getElementById(href.slice(1));
       if (!target) return;
@@ -25,9 +36,6 @@ export default function SmoothScroll() {
 
       const top =
         target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
-      const reduced = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
 
       window.scrollTo({
         top,
