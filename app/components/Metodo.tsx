@@ -2,11 +2,12 @@
 
 import { motion } from "motion/react";
 import Reveal, { RevealStagger, RevealItem } from "./Reveal";
+import { Highlight } from "./brand/Decor";
 
 const diferenciais = [
   {
     titulo: "Materiais licenciados de padrão mundial",
-    desc: "Conteúdo internacional usado em escolas referência — não apostilas genéricas.",
+    desc: "Conteúdo internacional usado em escolas de referência — não apostilas genéricas.",
   },
   {
     titulo: "Foco em protagonismo, não em decoreba",
@@ -27,12 +28,12 @@ export default function Metodo() {
     <section id="metodo" className="bg-belsy-black py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal className="mb-14 max-w-3xl">
-          <p className="font-handwritten text-3xl text-belsy-yellow">
+          <p className="font-handwritten text-3xl text-belsy-green md:text-4xl">
             o método Belsy
           </p>
           <h2 className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
             Idioma é ferramenta. A gente te ensina a{" "}
-            <span className="text-belsy-purple-soft">usar bem.</span>
+            <Highlight>usar bem.</Highlight>
           </h2>
         </Reveal>
 
@@ -41,18 +42,18 @@ export default function Metodo() {
             <RevealItem key={d.titulo}>
               <motion.div
                 whileHover={{
-                  borderColor: "rgba(232, 255, 63, 0.55)",
+                  borderColor: "rgba(184, 255, 0, 0.55)",
                   backgroundColor: "rgba(255,255,255,0.05)",
                 }}
                 transition={{ duration: 0.25 }}
                 className="flex h-full gap-5 rounded-3xl border border-white/10 bg-white/[0.03] p-7"
               >
-                <span className="font-display text-4xl font-extrabold text-belsy-yellow">
+                <span className="font-display text-4xl font-extrabold text-belsy-green">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="font-display text-xl font-bold">{d.titulo}</h3>
-                  <p className="mt-2 text-white/70">{d.desc}</p>
+                  <h3 className="font-display text-xl font-extrabold">{d.titulo}</h3>
+                  <p className="mt-2 font-normal text-white/70">{d.desc}</p>
                 </div>
               </motion.div>
             </RevealItem>

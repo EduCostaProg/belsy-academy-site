@@ -16,7 +16,7 @@ const depoimentos = [
     autor: "@lainaferreira",
   },
   {
-    texto: "She's awesome! ✨💛",
+    texto: "She's awesome! ✨💚",
     autor: "@mfcouto",
   },
 ];
@@ -25,8 +25,11 @@ export default function Depoimentos() {
   return (
     <section className="bg-belsy-purple-deep py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <h2 className="mb-12 font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+        <Reveal className="mb-12">
+          <p className="font-handwritten text-3xl text-belsy-green md:text-4xl">
+            a real dos alunos
+          </p>
+          <h2 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
             O que os alunos dizem
           </h2>
         </Reveal>
@@ -39,7 +42,7 @@ export default function Depoimentos() {
             <RevealItem key={i}>
               <blockquote className="h-full rounded-2xl border border-white/15 bg-white/[0.06] p-6 transition hover:bg-white/[0.1]">
                 <p className="text-white/95">{d.texto}</p>
-                <footer className="mt-4 text-sm font-semibold text-belsy-yellow">
+                <footer className="mt-4 text-sm font-extrabold text-belsy-green">
                   {d.autor}
                 </footer>
               </blockquote>
