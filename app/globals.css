@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-belsy-purple: #6e2deb;
-  --color-belsy-purple-deep: #3a1685;
-  --color-belsy-purple-soft: #8e5af0;
-  --color-belsy-yellow: #e8ff3f;
-  --color-belsy-lime: #5be83d;
-  --color-belsy-black: #0a0a0a;
+  /* ---- Cores oficiais (brand book Belsy) ---- */
+  --color-belsy-purple: #6e47e4;
+  --color-belsy-purple-deep: #3a1f8f;
+  --color-belsy-purple-soft: #9a7cf2;
+  --color-belsy-green: #b8ff00;
+  --color-belsy-black: #000000;
   --color-belsy-white: #ffffff;
   --color-belsy-gray: #e5e5e5;
 
-  --font-display: var(--font-bricolage), system-ui, sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-handwritten: var(--font-caveat), cursive;
+  /* ---- Tipografia oficial ---- */
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-display: var(--font-poppins), system-ui, sans-serif;
+  --font-handwritten: var(--font-mansalva), cursive;
 }
 
 :root {
@@ -26,9 +27,72 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Poppins corpo = Light (300) por padrão, conforme o brand book */
+body {
+  font-weight: 300;
 }
 
 ::selection {
-  background: var(--color-belsy-yellow);
+  background: var(--color-belsy-green);
   color: var(--color-belsy-black);
+}
+
+/* Foco de teclado visível em todos os controles (WCAG 2.4.7).
+   Verde sobre roxo/preto = forte; o offset deixa o anel visível
+   também ao redor dos botões verdes. */
+:focus-visible {
+  outline: 3px solid var(--color-belsy-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* Botões verdes: anel preto p/ contrastar com o próprio fundo verde */
+.bg-belsy-green:focus-visible {
+  outline-color: var(--color-belsy-black);
+}
+
+/* Balançar do ícone — disparado por group-hover do card inteiro */
+@keyframes belsy-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* Onda do botão de WhatsApp — pulso curto + intervalo longo (menos frequente) */
+@keyframes belsy-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
