@@ -6,20 +6,20 @@ import { Highlight } from "./brand/Decor";
 
 const diferenciais = [
   {
-    titulo: "Materiais licenciados de padrão mundial",
-    desc: "Conteúdo internacional usado em escolas de referência — não apostilas genéricas.",
+    titulo: "Material de Padrão Internacional",
+    desc: "Conteúdo de ponta utilizado nas melhores escolas do mundo. Diga adeus às apostilas genéricas e desatualizadas.",
   },
   {
-    titulo: "Foco em protagonismo, não em decoreba",
-    desc: "Você aprende para usar, se posicionar e ganhar voz. Não para passar no quiz e esquecer.",
+    titulo: "Fluência que Dá Voz",
+    desc: "Esqueça a decoreba. Nosso foco é que você assuma o protagonismo e use o idioma como uma verdadeira ferramenta de conexão.",
   },
   {
     titulo: "Turmas reduzidas (até 4 alunos)",
-    desc: "Atenção real do professor, conversação garantida em toda aula, ritmo respeitado.",
+    desc: "Conversação garantida em todas as aulas. Tenha a atenção real do professor e o seu ritmo de aprendizado 100% respeitado.",
   },
   {
-    titulo: "Professores autorais",
-    desc: "Tradutores, intérpretes e educadores apaixonados — não roteiros engessados.",
+    titulo: "Vivência Real do Idioma",
+    desc: "Nossa equipe traz o mundo real para a sala de aula. Tradutores e educadores de excelência, fugindo do ensino óbvio e robótico.",
   },
 ];
 

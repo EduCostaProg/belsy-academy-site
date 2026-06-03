@@ -289,14 +289,14 @@ export function Highlight({
   className?: string;
 }) {
   return (
-    <span className={`relative inline-block ${className}`}>
+    <span className={`relative mx-[0.22em] inline-block ${className}`}>
       <span
         aria-hidden
         style={{
           clipPath: STRIP_CLIP,
           filter: "drop-shadow(0 3px 4px rgba(0,0,0,0.28))",
         }}
-        className="absolute -left-[0.24em] -right-[0.24em] -top-[0.14em] -bottom-[0.22em] z-0 -skew-x-2 bg-belsy-green"
+        className="absolute -left-[0.13em] -right-[0.13em] -top-[0.14em] -bottom-[0.22em] z-0 -skew-x-2 bg-belsy-green"
       />
       <span className="relative z-10 text-belsy-purple">{children}</span>
     </span>

@@ -4,10 +4,12 @@ import { motion } from "motion/react";
 import { RevealStagger, RevealItem, default as Reveal } from "./Reveal";
 import { Highlight, IconBackpack, IconBriefcase, IconHeart } from "./brand/Decor";
 
+const LINKTREE = "https://linktr.ee/academybelsy";
+
 const personas = [
   {
     titulo: "Crianças & Adolescentes",
-    desc: "Conteúdo licenciado de padrão internacional, com professores que tornam o aprendizado leve e divertido.",
+    desc: "Inglês natural desde cedo. Metodologia internacional com professores que tornam o aprendizado leve, divertido e preparam seu filho para o mundo.",
     Icon: IconBackpack,
     cor: "bg-belsy-purple",
     text: "text-white",
@@ -25,7 +27,7 @@ const personas = [
   },
   {
     titulo: "Mães & 50+",
-    desc: "Aprender idioma é exercício de longevidade cognitiva. Mantenha a mente ágil e fortaleça vínculos.",
+    desc: "Aprender um idioma é a melhor forma de manter a mente ativa e ágil. Aulas no seu ritmo, sem pressão, focadas em socialização e em fortalecer vínculos.",
     Icon: IconHeart,
     cor: "bg-white",
     text: "text-belsy-black",
@@ -71,6 +73,28 @@ export default function ParaQuem() {
             </RevealItem>
           ))}
         </RevealStagger>
+
+        <Reveal className="mt-14 flex flex-col items-center gap-4 text-center">
+          <p className="font-handwritten text-2xl text-belsy-green">
+            se identificou?
+          </p>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            href={LINKTREE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-belsy-green px-8 py-4 text-base font-extrabold text-belsy-black shadow-lg shadow-belsy-green/20"
+          >
+            Encontrar minha turma
+            <span
+              aria-hidden
+              className="inline-block transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </motion.a>
+        </Reveal>
       </div>
     </section>
   );
