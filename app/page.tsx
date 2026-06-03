@@ -9,6 +9,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
 import MotionProvider from "./components/MotionProvider";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <WhatsAppButton />
     </MotionProvider>
   );
 }

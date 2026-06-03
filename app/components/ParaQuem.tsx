@@ -56,15 +56,11 @@ export default function ParaQuem() {
               <motion.div
                 whileHover={{ y: -6, scale: 1.015 }}
                 transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                className={`${p.cor} ${p.text} h-full rounded-3xl p-8 shadow-xl`}
+                className={`group ${p.cor} ${p.text} h-full rounded-3xl p-8 shadow-xl`}
               >
-                <motion.span
-                  className="block"
-                  whileHover={{ rotate: [0, -8, 8, -4, 0] }}
-                  transition={{ duration: 0.6 }}
-                >
+                <span className="block group-hover:[animation:belsy-wiggle_0.6s_ease-in-out]">
                   <p.Icon className={`h-10 w-10 ${p.iconColor}`} />
-                </motion.span>
+                </span>
                 <h3 className="mt-5 font-display text-2xl font-extrabold">
                   {p.titulo}
                 </h3>

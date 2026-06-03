@@ -53,6 +53,23 @@ body {
   outline-color: var(--color-belsy-black);
 }
 
+/* Balançar do ícone — disparado por group-hover do card inteiro */
+@keyframes belsy-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-4deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
