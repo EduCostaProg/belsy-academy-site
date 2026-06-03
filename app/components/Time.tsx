@@ -28,6 +28,7 @@ export default function Time() {
     const raf = requestAnimationFrame(init);
     const onResize = () => {
       setWidth.current = el.scrollWidth / COPIES.length;
+      el.scrollLeft = setWidth.current; // re-ancora na cópia do meio ao mudar largura
     };
     window.addEventListener("resize", onResize);
     return () => {
@@ -153,7 +154,8 @@ export default function Time() {
                         type="button"
                         onClick={() => setActive(p)}
                         tabIndex={clone ? -1 : undefined}
-                        className="group mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-belsy-green"
+                        aria-label={clone ? undefined : `Ver mais sobre ${p.nome}`}
+                        className="group mt-2 inline-flex min-h-11 items-center gap-1.5 px-3 text-sm font-bold text-belsy-green"
                       >
                         Ver mais
                         <span

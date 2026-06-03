@@ -21,12 +21,12 @@ export default function WhatsAppButton() {
       transition={{ delay: 1.1, type: "spring", stiffness: 260, damping: 18 }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.94 }}
-      className="group fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center md:bottom-7 md:right-7"
+      className="group fixed bottom-5 right-5 z-50 grid h-12 w-12 place-items-center md:bottom-7 md:right-7 md:h-14 md:w-14"
     >
       {/* halo pulsante (desligado em prefers-reduced-motion pela media query global) */}
       <span
         aria-hidden
-        className="absolute inset-0 animate-ping rounded-full bg-belsy-green opacity-50"
+        className="absolute inset-0 rounded-full bg-belsy-green [animation:belsy-wave_3s_ease-out_infinite]"
       />
       {/* face do botão */}
       <span
@@ -36,7 +36,7 @@ export default function WhatsAppButton() {
       {/* glifo do WhatsApp */}
       <svg
         viewBox="0 0 24 24"
-        className="relative h-7 w-7 text-belsy-black"
+        className="relative h-6 w-6 text-belsy-black md:h-7 md:w-7"
         fill="currentColor"
         aria-hidden
       >

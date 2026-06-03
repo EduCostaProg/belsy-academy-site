@@ -81,13 +81,13 @@ export default function ProfessorModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 10 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-h-[85vh] w-[92%] max-w-lg overflow-y-auto rounded-3xl border border-white/15 bg-belsy-black p-6 shadow-2xl md:p-8"
+            className="relative flex max-h-[85vh] w-[92%] max-w-lg flex-col overflow-hidden rounded-3xl border border-white/15 bg-belsy-black shadow-2xl"
           >
             <button
               ref={closeRef}
               onClick={onClose}
               aria-label="Fechar"
-              className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+              className="absolute right-3 top-3 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden>
                 <path
@@ -99,6 +99,7 @@ export default function ProfessorModal({
               </svg>
             </button>
 
+            <div className="overflow-y-auto p-6 md:p-8">
             <div className="flex items-start gap-4 pr-10">
               <div className="relative h-28 w-24 shrink-0 overflow-hidden rounded-2xl bg-belsy-gray">
                 <Image
@@ -161,6 +162,7 @@ export default function ProfessorModal({
             >
               Quero aula com {professor.nome} →
             </motion.a>
+            </div>
           </motion.div>
         </motion.div>
       )}
