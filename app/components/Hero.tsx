@@ -2,7 +2,14 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { BelsyIcon } from "./brand/BrandMark";
-import { WorldMap, Highlight, Sparkle } from "./brand/Decor";
+import {
+  WorldMap,
+  Highlight,
+  Sparkle,
+  IconTurma,
+  IconChatCheck,
+  IconGlobe,
+} from "./brand/Decor";
 
 const LINKTREE = "https://linktr.ee/academybelsy";
 
@@ -19,13 +26,13 @@ const headlineWords = [
   { text: "protagonismo.", className: "", highlight: true },
 ];
 
-const float = (delay: number, distance = 10) => ({
-  y: [0, -distance, 0],
+const float = (d: number) => ({
+  y: [0, -(9 + d * 5)],
   transition: {
-    duration: 4 + delay,
+    duration: 3 + d,
     repeat: Infinity,
+    repeatType: "mirror" as const,
     ease: "easeInOut" as const,
-    delay,
   },
 });
 
@@ -40,6 +47,12 @@ const sparkles = [
   { pos: "right-12 top-4", size: "h-9 w-9", delay: 0.2, dur: 2.6 },
   { pos: "left-4 bottom-16", size: "h-6 w-6", delay: 0.9, dur: 3.1 },
   { pos: "right-24 bottom-1", size: "h-4 w-4", delay: 1.4, dur: 2.3 },
+];
+
+const valueProps = [
+  { Icon: IconTurma, label: "Turmas de até 4 alunos" },
+  { Icon: IconChatCheck, label: "Método prático e real" },
+  { Icon: IconGlobe, label: "Materiais de padrão mundial" },
 ];
 
 export default function Hero() {
@@ -60,15 +73,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-32">
         <div>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-5 inline-block rounded-full border border-belsy-green/40 bg-belsy-green/10 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.18em] text-belsy-green"
-          >
-            Languages &amp; Global Skills
-          </motion.p>
-
           <motion.h1
             className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight [overflow-wrap:break-word] sm:text-5xl md:text-7xl"
             initial="hidden"
@@ -102,8 +106,8 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.9 }}
             className="mt-6 max-w-lg text-lg text-white/85"
           >
-            Inglês e espanhol com materiais licenciados de padrão mundial.
-            Aprenda para se posicionar — não só para passar de prova.
+            Domine inglês e espanhol com materiais de padrão internacional.
+            Assuma o controle da sua comunicação e vá muito além das provas.
           </motion.p>
 
           <motion.div
@@ -132,35 +136,67 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 1.4 }}
-            className="mt-6 text-sm text-white/90"
+          <motion.ul
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { delayChildren: 1.25, staggerChildren: 0.12 } },
+            }}
+            className="mt-9 flex max-w-xl flex-wrap gap-2.5"
           >
-            🚀 Turmas reduzidas de até 4 alunos — atenção real em toda aula.
-          </motion.p>
+            {valueProps.map(({ Icon, label }) => (
+              <motion.li
+                key={label}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="flex items-center gap-2.5 rounded-2xl border border-white/12 bg-white/[0.06] py-2 pl-2 pr-3.5 backdrop-blur-sm"
+              >
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-belsy-green text-belsy-purple-deep">
+                  <Icon className="h-[18px] w-[18px]" />
+                </span>
+                <span className="text-sm font-bold leading-tight text-white">
+                  {label}
+                </span>
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
 
         <div className="relative hidden h-[26rem] md:block">
-          {/* halo de luz lime atrás do B */}
+          {/* respiro sutil de profundidade atrás do B (sem brilho/glow) */}
           <div
             aria-hidden
-            className="absolute left-1/2 top-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-belsy-green/25 blur-[90px]"
-          />
-          <div
-            aria-hidden
-            className="absolute left-1/2 top-1/2 h-[13rem] w-[13rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-belsy-green/15 blur-3xl"
+            className="absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 60%)",
+            }}
           />
 
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            initial={{ opacity: 0, scale: 0.8 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 will-change-transform"
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <motion.div animate={reduce ? undefined : { rotate: [0, 2, 0, -2, 0] }} transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}>
-              <BelsyIcon variant="white" size={260} priority />
+            <motion.div
+              className="will-change-transform"
+              animate={reduce ? undefined : { y: [-9, 7], rotate: [-1.6, 1.6] }}
+              transition={{
+                duration: 3.8,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+            >
+              <BelsyIcon variant="white" size={300} priority />
             </motion.div>
           </motion.div>
 
@@ -168,7 +204,7 @@ export default function Hero() {
             <motion.span
               key={i}
               aria-hidden
-              className={`absolute ${s.pos} ${s.size} text-belsy-green drop-shadow-[0_0_10px_rgba(184,255,0,0.5)]`}
+              className={`absolute ${s.pos} ${s.size} text-belsy-green will-change-transform`}
               initial={{ opacity: 0, scale: 0 }}
               animate={
                 reduce
@@ -188,12 +224,15 @@ export default function Hero() {
           {greetings.map((g) => (
             <motion.span
               key={g.text}
-              className={`absolute ${g.pos} font-handwritten text-4xl text-belsy-green drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]`}
+              className={`absolute ${g.pos} font-handwritten text-4xl text-belsy-green`}
               initial={{ opacity: 0, scale: 0.6, rotate: g.rotate * 2 }}
               animate={{ opacity: 1, scale: 1, rotate: g.rotate }}
               transition={{ delay: g.delay, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <motion.span className="inline-block" animate={reduce ? undefined : float(g.d)}>
+              <motion.span
+                className="inline-block will-change-transform"
+                animate={reduce ? undefined : float(g.d)}
+              >
                 {g.text}
               </motion.span>
             </motion.span>

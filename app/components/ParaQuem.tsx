@@ -2,32 +2,35 @@
 
 import { motion } from "motion/react";
 import { RevealStagger, RevealItem, default as Reveal } from "./Reveal";
-import { Highlight } from "./brand/Decor";
+import { Highlight, IconBackpack, IconBriefcase, IconHeart } from "./brand/Decor";
 
 const personas = [
   {
     titulo: "Crianças & Adolescentes",
     desc: "Conteúdo licenciado de padrão internacional, com professores que tornam o aprendizado leve e divertido.",
-    emoji: "🧒",
+    Icon: IconBackpack,
     cor: "bg-belsy-purple",
     text: "text-white",
     sub: "text-white/85",
+    iconColor: "text-white",
   },
   {
     titulo: "Adultos & Profissionais",
     desc: "Idiomas para destravar carreira, viagens e oportunidades — sem decoreba, com foco em comunicação real.",
-    emoji: "💼",
+    Icon: IconBriefcase,
     cor: "bg-belsy-green",
     text: "text-belsy-black",
     sub: "text-belsy-black/75",
+    iconColor: "text-belsy-black",
   },
   {
     titulo: "Mães & 50+",
     desc: "Aprender idioma é exercício de longevidade cognitiva. Mantenha a mente ágil e fortaleça vínculos.",
-    emoji: "💜",
+    Icon: IconHeart,
     cor: "bg-white",
     text: "text-belsy-black",
     sub: "text-belsy-black/70",
+    iconColor: "text-belsy-purple",
   },
 ];
 
@@ -54,11 +57,11 @@ export default function ParaQuem() {
                 className={`${p.cor} ${p.text} h-full rounded-3xl p-8 shadow-xl`}
               >
                 <motion.span
-                  className="block text-5xl"
-                  whileHover={{ rotate: [0, -10, 10, -6, 0] }}
+                  className="block"
+                  whileHover={{ rotate: [0, -8, 8, -4, 0] }}
                   transition={{ duration: 0.6 }}
                 >
-                  {p.emoji}
+                  <p.Icon className={`h-10 w-10 ${p.iconColor}`} />
                 </motion.span>
                 <h3 className="mt-5 font-display text-2xl font-extrabold">
                   {p.titulo}

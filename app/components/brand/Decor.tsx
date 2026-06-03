@@ -133,6 +133,118 @@ export function MarkerCheck({ className = "" }: { className?: string }) {
   );
 }
 
+/* ---- Ícones de proposta de valor (hand-drawn verde, currentColor) ---- */
+export function IconTurma({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden className={className}>
+      <circle cx="24" cy="16" r="6.5" stroke="currentColor" strokeWidth="4" />
+      <path
+        d="M12.5 38 C12.5 30, 35.5 30, 35.5 38"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <circle cx="9" cy="19" r="4" stroke="currentColor" strokeWidth="3.2" />
+      <circle cx="39" cy="19" r="4" stroke="currentColor" strokeWidth="3.2" />
+      <path d="M3 37 C3 31.5, 9 30.5, 12.5 32.5" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+      <path d="M45 37 C45 31.5, 39 30.5, 35.5 32.5" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IconChatCheck({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden className={className}>
+      <path
+        d="M8 9 H40 a5 5 0 0 1 5 5 V29 a5 5 0 0 1 -5 5 H22 l-9 8 v-8 H8 a5 5 0 0 1 -5 -5 V14 a5 5 0 0 1 5 -5 Z"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15 21.5 L21 27.5 L33 14.5"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconGlobe({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden className={className}>
+      <circle cx="24" cy="24" r="19" stroke="currentColor" strokeWidth="4" />
+      <path
+        d="M24 5 C13 14, 13 34, 24 43 C35 34, 35 14, 24 5 Z"
+        stroke="currentColor"
+        strokeWidth="3.2"
+        strokeLinejoin="round"
+      />
+      <path d="M5.5 24 H42.5" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/* ---- Ícones minimalistas de linha (seção "Para quem é") ---- */
+export function IconBackpack({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d="M6 21V11a6 6 0 0 1 12 0v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1Z" />
+      <path d="M9 9V7.5a3 3 0 0 1 6 0V9" />
+      <path d="M8 11.5h8" />
+      <path d="M8.5 22v-6.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5V22" />
+    </svg>
+  );
+}
+
+export function IconBriefcase({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <rect x="3" y="7.5" width="18" height="13" rx="2.5" />
+      <path d="M8.5 7.5V6a2.5 2.5 0 0 1 2.5-2.5h2a2.5 2.5 0 0 1 2.5 2.5v1.5" />
+      <path d="M3 12.5h18" />
+      <path d="M12 11.5v2" />
+    </svg>
+  );
+}
+
+export function IconHeart({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.49 4.04 3 5.5l7 7Z" />
+    </svg>
+  );
+}
+
 /* ---- Borda de papel rasgado (compartilhada) ---- */
 const TORN_CLIP =
   "polygon(1% 14%, 11% 3%, 26% 11%, 42% 2%, 58% 10%, 74% 1%, 90% 9%, 99% 22%, 97% 46%, 99% 72%, 96% 92%, 80% 98%, 62% 91%, 46% 99%, 28% 92%, 12% 98%, 2% 84%, 4% 56%, 1% 34%)";
