@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Precisa bater com o nome do projeto Worker na Cloudflare.
+  "name": "belsy-academy-site",
+  "compatibility_date": "2025-09-23",
+  // Site estático: servimos a pasta ./out direto, sem Worker de runtime.
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
